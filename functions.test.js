@@ -9,6 +9,14 @@ describe("getUsers", () => {
     expect(users[0]).toHaveProperty("email");
   });
 
+  it("should not to be NULL", async () => {
+    const users = await getUsers();
+    expect(users).not.toBeNull();
+  });
+
+  // todo is a property of test to let you add todo to your test case
+  test.todo("should return an array of users");
+
   it("should return an array of users with a length of 10", async () => {
     const users = await getUsers();
     expect(users).toHaveLength(10);
@@ -54,6 +62,10 @@ describe("getUser", () => {
   it("should return a user with username Bret", async () => {
     const user = await getUser(1);
     expect(user.username).toBe("Bret");
+  });
+  it("should return a user not to be NULL", async () => {
+    const user = await getUser(1);
+    expect(user).not.toBeNull();
   });
 });
 
