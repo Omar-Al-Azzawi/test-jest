@@ -1,4 +1,4 @@
-const { getUsers, getUser, getPosts } = require("./functions");
+const { getUsers, getUser, getPosts } = require("../functions");
 
 describe("getUsers", () => {
   it("should return an array of users", async () => {
