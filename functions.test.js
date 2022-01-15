@@ -47,4 +47,42 @@ describe("getUser", () => {
     const user = await getUser(1);
     expect(user.id).toBe(1);
   });
+  it("should return a user with name Leanne Graham", async () => {
+    const user = await getUser(1);
+    expect(user.name).toBe("Leanne Graham");
+  });
+  it("should return a user with username Bret", async () => {
+    const user = await getUser(1);
+    expect(user.username).toBe("Bret");
+  });
+});
+
+describe("getPosts", () => {
+  it("should return an array of posts", async () => {
+    const posts = await getPosts();
+    expect(posts).toBeInstanceOf(Array);
+    expect(posts[0]).toHaveProperty("id");
+    expect(posts[0]).toHaveProperty("title");
+    expect(posts[0]).toHaveProperty("body");
+  });
+  it("should return an array of posts with a length of 100", async () => {
+    const posts = await getPosts();
+    expect(posts).toHaveLength(100);
+  });
+  it("should return first post id", async () => {
+    const posts = await getPosts();
+    expect(posts[0].id).toBe(1);
+  });
+  it("should return first post title", async () => {
+    const posts = await getPosts();
+    expect(posts[0].title).toBe(
+      "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
+    );
+  });
+  it("should return first post body", async () => {
+    const posts = await getPosts();
+    expect(posts[0].body).toBe(
+      "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    );
+  });
 });
