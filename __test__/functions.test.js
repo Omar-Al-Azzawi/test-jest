@@ -37,6 +37,17 @@ describe("getUsers", () => {
     expect(users[0]).toHaveProperty("email");
   });
 
+  for (let i = 1; i <= 10; i++) {
+    it(`should return user ${i}`, async () => {
+      const user = await getUser(i);
+      expect(user).toMatchSnapshot();
+      expect(user).toHaveProperty("id");
+      expect(user).toHaveProperty("name");
+      expect(user).toHaveProperty("username");
+      expect(user).toHaveProperty("email");
+    });
+  }
+
   it("should not to be NULL", async () => {
     const users = await getUsers();
     expect(users).not.toBeNull();
