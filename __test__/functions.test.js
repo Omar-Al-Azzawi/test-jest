@@ -4,6 +4,34 @@ describe("getUsers", () => {
   it("should return an array of users", async () => {
     const users = await getUsers();
     expect(users).toBeInstanceOf(Array);
+    expect(users).toMatchSnapshot();
+    expect(users.map((user) => user.id)).toEqual([
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+    ]);
+    expect(users.map((user) => user.name)).toEqual([
+      "Leanne Graham",
+      "Ervin Howell",
+      "Clementine Bauch",
+      "Patricia Lebsack",
+      "Chelsey Dietrich",
+      "Mrs. Dennis Schulist",
+      "Kurtis Weissnat",
+      "Nicholas Runolfsdottir V",
+      "Glenna Reichert",
+      "Clementina DuBuque",
+    ]);
+    expect(users.map((user) => user.username)).toEqual([
+      "Bret",
+      "Antonette",
+      "Samantha",
+      "Karianne",
+      "Kamren",
+      "Leopoldo_Corkery",
+      "Elwyn.Skiles",
+      "Maxime_Nienow",
+      "Delphine",
+      "Moriah.Stanton",
+    ]);
     expect(users[0]).toHaveProperty("name");
     expect(users[0]).toHaveProperty("username");
     expect(users[0]).toHaveProperty("email");
