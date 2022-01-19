@@ -137,3 +137,14 @@ describe("getPosts", () => {
     );
   });
 });
+
+test("mock functions", () => {
+  const mock = jest.fn(() => "mock");
+  expect(mock()).toBe("mock");
+  console.log(mock);
+  mock.mockReturnValueOnce(10);
+  mock.mockReturnValueOnce("ten");
+  mock.mockReturnValue(true);
+
+  expect(mock()).toBe(10);
+});
