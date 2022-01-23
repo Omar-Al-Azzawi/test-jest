@@ -8,4 +8,5 @@
   <li>JavaSecript</li>
   <li>Express</li>
   <li>Jest</li>
+  <li>axios</li>
 </ul>
