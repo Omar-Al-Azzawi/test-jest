@@ -5,7 +5,7 @@
 # stacks:
 
 <ul>
-  <li>JavaSecript</li>
+  <li>JavaScript</li>
   <li>Express</li>
   <li>Jest</li>
   <li>axios</li>
